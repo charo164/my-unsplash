@@ -1,0 +1,28 @@
+$white: #fff;
+$light: #fcfdfc;
+$dark: #2f3237;
+/************
+*** LIGHT ***
+************/
+
+$primary-light: #3db46d;
+$text-light: #333333;
+$danger-light: #eb5757;
+$border-light: #bdbdbd;
+$shadow-light: #0000001a;
+
+/***********
+*** DARK ***
+***********/
+
+$primary-dark: #3d6db4;
+$text-dark: #fcfdfc;
+$danger-dark: #eb5757;
+$border-dark: #bdbdbd;
+$shadow-dark: #ffffff1a;
+
+$color-declaration: "light" $light, "dark" $dark, "white" $white,
+  "primary-light" $primary-light, "text-light" $text-light, "danger-light" $danger-light,
+  "border-light" $border-light, "shadow-light" $shadow-light, "primary-dark" $primary-dark,
+  "text-dark" $text-dark, "danger-dark" $danger-dark, "border-dark" $border-dark,
+  "shadow-dark" $shadow-dark;

@@ -1,0 +1,147 @@
+@use "sass:string";
+@use "sass:list";
+@import "../color.scss";
+
+$max-class: 150;
+
+@mixin margin-class {
+  @for $i from 1 through $max-class {
+    $margin: $i * 0.05rem;
+    .m-#{$i} {
+      margin: $margin;
+    }
+    .ml-#{$i} {
+      margin-left: $margin;
+    }
+    .mr-#{$i} {
+      margin-right: $margin;
+    }
+    .mt-#{$i} {
+      margin-top: $margin;
+    }
+    .mb-#{$i} {
+      margin-bottom: $margin;
+    }
+    .mx-#{$i} {
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+    .my-#{$i} {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+  }
+}
+
+@mixin padding-class {
+  @for $i from 1 through $max-class {
+    $padding: $i * 0.05rem;
+    .p-#{$i} {
+      padding: $padding;
+    }
+    .pl-#{$i} {
+      padding-left: $padding;
+    }
+    .pr-#{$i} {
+      padding-right: $padding;
+    }
+    .pt-#{$i} {
+      padding-top: $padding;
+    }
+    .pb-#{$i} {
+      padding-bottom: $padding;
+    }
+    .px-#{$i} {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+    .py-#{$i} {
+      padding-top: $padding;
+      padding-bottom: $padding;
+    }
+  }
+}
+
+@mixin font-size-class {
+  @for $i from 1 through $max-class {
+    $font-size: $i * 0.05rem;
+    .fs-#{$i} {
+      font-size: $font-size;
+    }
+  }
+}
+
+@mixin width-class {
+  @for $i from 1 through $max-class {
+    $with: $i * 0.2rem;
+    $pc: $i * 1%;
+    .w-#{$i} {
+      width: $with;
+    }
+    .mxw-#{$i} {
+      max-width: $with;
+    }
+    .mnw-#{$i} {
+      min-width: $with;
+    }
+    .rw-#{$i} {
+      width: $pc;
+    }
+  }
+}
+
+@mixin height-class {
+  @for $i from 1 through $max-class {
+    $height: $i * 0.2rem;
+    $pc: $i * 1%;
+    .h-#{$i} {
+      height: $height;
+    }
+    .mxh-#{$i} {
+      max-height: $height;
+    }
+    .mnh-#{$i} {
+      min-height: $height;
+    }
+    .rh-#{$i} {
+      height: $pc;
+    }
+  }
+}
+
+@mixin border-class {
+  @for $i from 1 through $max-class {
+    $border-width: $i * 0.05rem;
+    .b-#{$i} {
+      border: $border-width solid;
+    }
+  }
+}
+
+/*****************
+***** COLOR ******
+*****************/
+
+@mixin bg-color-class {
+  @each $i in $color-declaration {
+    .bgc-#{string.unquote(list.nth($i,1))} {
+      background-color: list.nth($i, 2);
+    }
+  }
+}
+
+@mixin text-class {
+  @each $i in $color-declaration {
+    .c-#{string.unquote(list.nth($i,1))} {
+      color: list.nth($i, 2);
+    }
+  }
+}
+
+@mixin border-color-class {
+  @each $i in $color-declaration {
+    .bc-#{string.unquote(list.nth($i,1))} {
+      border-color: list.nth($i, 2);
+    }
+  }
+}

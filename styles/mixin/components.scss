@@ -1,0 +1,65 @@
+@use "sass:string";
+@use "sass:list";
+@import "../color.scss";
+
+$max-class: 100;
+$bg-transition: 0.4s;
+
+@mixin card {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 420px;
+    height: 323px;
+    border-top: 2px solid $primary;
+    box-shadow: rgb(227 233 243) 0px 2px 4px 0px;
+    background-color: $white;
+    border-radius: 2px;
+    padding: 20px;
+  }
+}
+
+@mixin input {
+  .input {
+    height: 38px;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    border: 1px solid $inputBorder;
+    margin: 10px 0 15px 0;
+    padding: 5px 30px;
+    outline: none;
+  }
+  .input:focus {
+    border-color: $info;
+  }
+}
+
+@mixin button {
+  .btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border-radius: 2px;
+    border: 0;
+    margin: 0.4rem;
+    font-weight: 400;
+    padding: 0.5rem 2rem;
+    background-color: $primary;
+    color: $white;
+    transition: all $bg-transition;
+    outline: none;
+    cursor: pointer;
+    &:disabled {
+      background-color: $secondary;
+      opacity: 0.4;
+    }
+    &:hover {
+      filter: brightness(85%);
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "./mixin/dynamic_property_class.scss";
+@import "./mixin/components.scss";
+@import "./color.scss";
+
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/**Global**/
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+button,
+input {
+  border: 0;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+/**********
+*SCROLLBAR*
+***********/
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 4px;
+  background: $dark;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  position: absolute;
+  background: $border-light;
+  border-radius: 4px;
+  transition: background-color 0.4s;
+}
+
+/***Dynamic Class***/
+@include margin-class;
+@include padding-class;
+@include font-size-class;
+@include bg-color-class;
+@include text-class;
+@include width-class;
+@include height-class;
+@include border-class;
+@include border-color-class;
